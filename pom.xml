@@ -14,10 +14,12 @@
     <artifactId>spring-boot-hello-world</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-boot-hello-world</name>
-    <description>A hello-world application built with Spring Boot.</description>
+    <description>A hello-world web application built with Spring Boot.</description>
 
     <properties>
         <java.version>17</java.version>
+        <jkube.version>1.11.0</jkube.version>
+        <jkube.enricher.jkube-service.type>NodePort</jkube.enricher.jkube-service.type>
     </properties>
 
     <dependencies>
@@ -42,6 +44,12 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.eclipse.jkube</groupId>
+                <artifactId>kubernetes-maven-plugin</artifactId>
+                <version>${jkube.version}</version>
             </plugin>
         </plugins>
     </build>
